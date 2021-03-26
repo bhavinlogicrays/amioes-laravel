@@ -1,0 +1,45 @@
+.vendor_stocks_modal .modal-dialog{
+	width:65% !important;
+}
+.buyer_purchases_modal .modal-dialog{
+	width:75% !important;
+}
+.auction_stocks_modal .modal-dialog{
+	width:75% !important;
+}
+.invoice_details_modal .modal-dialog{
+	width:96% !important;
+}
+.modal-title{
+	text-align: center;
+	font-weight: 600;
+}
+tfoot tr td{
+	font-weight: 600;
+}
+tr>td, tr>th{
+	text-align: center;
+}
+
+.box.box-solid.box-purple {
+    border: 1px solid #605ca8;
+}
+.box.box-solid.box-purple>.box-header,.btn-purple {
+    color: #fff;
+    background: #605ca8;
+    background-color: #605ca8;
+}
+.box.box-solid.box-purple>.box-header a, .box.box-solid.box-purple>.box-header .btn {
+    color: #fff;
+}
+.box.box-purple {
+    border-top-color: #605ca8;
+}
+.large_modal_dialog{
+  width: 90%;
+}
+.modal-header {
+	background: #605ca8;
+	color: white;
+    padding: 5px;
+}
