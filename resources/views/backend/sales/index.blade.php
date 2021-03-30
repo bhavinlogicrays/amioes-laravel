@@ -9,12 +9,12 @@
          </div>
      </div>
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary float-left">Lists of Lotting</h6>
-      <a href="{{route('lotting.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add Vendor"><i class="fas fa-plus"></i> Add Lot</a>
+      <h6 class="m-0 font-weight-bold text-primary float-left">Lists of Sales</h6>
+      <a href="{{route('sales.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add Vendor"><i class="fas fa-plus"></i> Add Sale</a>
     </div>
     <div class="card-body">
       <div class="table-responsive">
-        @if(count($lotting)>0)
+        @if(count($sales)>0)
             <table class="table table-bordered" id="banner-dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
@@ -33,9 +33,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($lotting as $lot)   
+                    @foreach($sales as $sale)   
                     <tr>
-                        <td>{{ $lot->vendor_code }}</td>
+                        {{-- <td>{{ $lot->vendor_code }}</td>
                         <td>{{ $lot->first_name }}{{ $lot->last_name }}</td>
                         <td>{{ $lot->lot_no }}</td>
                         <td>{{ $lot->form_no }}</td>
@@ -52,13 +52,13 @@
                                     <i class="fas fa-edit" aria-hidden="true"></i>
                                 </span>
                             </a>
-                        </td>
+                        </td> --}}
                     </tr>
                     @endforeach
                 </tbody>
             </table>
         @else
-          <h6 class="text-center">No Lotting found!!! Please create Lot</h6>
+          <h6 class="text-center">No Sales found!!! Please create Sale</h6>
         @endif
       </div>
     </div>

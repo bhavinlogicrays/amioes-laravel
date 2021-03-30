@@ -150,7 +150,7 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','admin']],function(){
     // Auctions
     Route::resource('auctions','AuctionController');
     Route::get('sales','AuctionController@sales_show')->name('sales.index');
-	Route::get('auction_event','AuctionController@auction_event')->name('auction_event.index');
+	Route::get('sales/create','AuctionController@sales_create')->name('sales.create');
 	Route::post('auction_event','AuctionController@auction_event')->name('auction_event.store');
 	Route::post('save_new_sale','AuctionController@ajax_save_new_sale');
 	Route::post('remove_sale','AuctionController@ajax_remove_sale');

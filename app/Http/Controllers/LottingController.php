@@ -118,7 +118,6 @@ class LottingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // dd($request->all());
         unset($request['_method']);
         unset($request['_token']);
         $update = Lotting::where('id',$id)->update($request->all());
