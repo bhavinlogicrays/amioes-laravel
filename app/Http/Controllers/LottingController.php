@@ -18,7 +18,7 @@ class LottingController extends Controller
      */
     public function index()
     {   
-        $lotting = Lotting::select('lottings.stock_id',
+        $lotting = Lotting::select('lottings.id',
             'lottings.stock_id',
             'lottings.auction_id',
             'lottings.vendor_id',
@@ -95,8 +95,18 @@ class LottingController extends Controller
      */
     public function edit($id)
     {
-        $lot = Lotting::where('id' , '=' , $id)->first();
-        return view('backend.lotting.edit',compact('lot'));
+        $lotting_edit = Lotting::select("lottings.*",
+                'vendors.vendor_code',
+                'vendors.first_name',
+                'vendors.last_name',
+                'auctions.auction_no',
+                'auctions.venue',
+                'auctions.date',
+                'auctions.time')
+            ->join("vendors","vendors.id","=","lottings.vendor_id")
+            ->join("auctions","auctions.id","=","lottings.auction_id")
+            ->first();
+        return view('backend.lotting.edit',compact('lotting_edit'));
     }
 
     /**
@@ -108,7 +118,12 @@ class LottingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd($request->all());
+        unset($request['_method']);
+        unset($request['_token']);
+        $update = Lotting::where('id',$id)->update($request->all());
+        if($update)
+            return redirect(route('lotting.index'))->with('message','Lot Updated Successfully');
     }
 
     /**

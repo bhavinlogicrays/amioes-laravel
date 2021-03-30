@@ -17,16 +17,18 @@
         @if(count($lotting)>0)
             <table class="table table-bordered" id="banner-dataTable" width="100%" cellspacing="0">
                 <thead>
-                    <tr>11111
-                        <th>Vendor Name</th>
-                        <th>Lot No</th>
-                        <th>Form No</th>
+                    <tr>
+                        <th>Invoice</th>
+                        <th>Vendor Code</th>
                         <th>Item No</th>
-                        <th>Description</th>
+                        <th>Form No</th>
+                        <th>Rate</th>
                         <th>Quantity</th>
-                        <th>Left Quantity</th>
-                        <th>Reserve</th>
-                        <th>Sold</th>
+                        <th>Total</th>
+                        <th>Discount</th>
+                        <th>Net Total</th>
+                        <th>BP Amount</th>
+                        <th>Grand Total</th>
                         <th>Action</th>
                     </tr>
                 </thead>

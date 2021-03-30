@@ -107,11 +107,27 @@ class AuctionController extends Controller
             return json_encode('Auction has been deleted');
     }
 
+    public function sales_show(Request $request)
+    {
+        $sales = Sale::all();
+        $sales = Sale::select("lottings.*",
+                'vendors.vendor_code',
+                'vendors.first_name',
+                'vendors.last_name',
+                'auctions.auction_no',
+                'auctions.venue',
+                'auctions.date',
+                'auctions.time')
+            ->join("auctions","auctions.id","=","sales.auction_id")
+            ->join("buyers","vendors.id","=","lottings.vendor_id")
+            ->first();
+        return view('backend.sales.index',compact('sales'));
+    }
     public function auction_event(Request $request)
     {
         $auctions = Auction::all();
         $buyers = Buyer::select('id','buyer_code','first_name','last_name')->get();
-        return view('backend.pages.auction_events',compact('auctions','buyers'));
+        return view('backend.sales.index',compact('auctions','buyers'));
     }
 
     public function ajax_remove_sale(Request $request)

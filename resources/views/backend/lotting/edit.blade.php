@@ -3,56 +3,76 @@
     <div class="card">
         <h5 class="card-header">Edit Stock</h5>
         <div class="card-body">
-            <form method="post" action="{{route('lotting.update',$lot->id)}}">
+            <form method="post" action="{{route('lotting.update',$lotting_edit->id)}}">
                 {{csrf_field()}}
                 <div class="form-group">
-                    <label for="s_vendor_code">Vendor Code*
+                    <label for="auction">Auction
                     </label>
-                    <div class="input-group s_vendor_code">
-                        <input type="text" class="form-control" id="s_vendor_code" value="{{$stocks ?? ''->vendor_code}}" disabled>
+                    <div class="input-group auction">
+                        <input type="text" class="form-control" id="auction" value="{{$lotting_edit->auction_no}}" disabled>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="form_no">Form No*
+                    <label for="venue">Venue
                     </label>
-                    <div class="input-group form_no">
-                        <input type="text" name="form_no" class="form-control" id="form_no" value="{{$stocks ?? ''->form_no}}">
+                    <div class="input-group venue">
+                        <input type="text" name="venue" class="form-control" id="venue" value="{{$lotting_edit->venue}}" disabled>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="commission">Commission*
+                    <label for="date">Date
                     </label>
-                    <div class="input-group commission">
-                        <input type="text" name="commission" class="form-control" id="commission" value="{{$stocks ?? ''->commission}}">
+                    <div class="input-group date">
+                        <input type="text" name="date" class="form-control" id="date" value="{{$lotting_edit->date}}" disabled>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="item_no">Item Number*
+                    <label for="time">Time
                     </label>
-                    <div class="input-group item_no">
-                        <input type="text" name="item_no" class="form-control" id="item_no" value="{{$stocks ?? ''->item_no}}">
+                    <div class="input-group time">
+                        <input type="text" name="time" class="form-control" id="time" value="{{$lotting_edit->time}}" disabled>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="quantity">Quantity*
+                    <label for="vendor_code">Vendor Code
                     </label>
-                    <div class="input-group quantity">
-                        <input type="number" name="quantity" class="form-control" id="quantity" value="{{$stocks ?? ''->quantity}}">
+                    <div class="input-group vendor_code">
+                        <input type="text" name="vendor_code" class="form-control" id="vendor_code" value="{{$lotting_edit->vendor_code}}" disabled>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="reserve">Reserve*
+                    <label for="vendor">Vendor
                     </label>
-                    <div class="input-group reserve">
-                        <input type="number" name="reserve" class="form-control" id="reserve" value="{{$stocks ?? ''->reserve}}">
+                    <div class="input-group vendor">
+                        <input type="text" name="vendor" class="form-control" id="vendor" value="{{$lotting_edit->first_name}} {{$lotting_edit->last_name}} " disabled>
                     </div>
+                </div>
+                <div class="form-group">
+                    <label for="form_no">Form No</label>
+                    <input type="text" name="form_no" class="form-control" id="form_no" value="{{$lotting_edit->form_no}}" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="item_no">Item No</label>
+                    <input type="text" name="item_no" class="form-control" id="item_no" value="{{$lotting_edit->item_no}}" disabled>
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea name="description" id="" cols="10" rows="3" class="form-control">{{ $vendor->description }}</textarea>
+                    <input type="text" name="description" class="form-control" id="description" value="{{$lotting_edit->description}}" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity*</label>
+                    <input type="number" name="quantity" class="form-control" id="quantity" value="{{$lotting_edit->quantity}}">
+                </div>
+                <div class="form-group">
+                    <label for="reserve">Reserve*</label>
+                    <input type="number" name="reserve" class="form-control" id="reserve" value="{{$lotting_edit->reserve}}">
+                </div>
+                <div class="form-group">
+                    <label for="lot_no">Lot No</label>
+                    <input type="text" name="lot_no" class="form-control" id="lot_no" value="{{$lotting_edit->lot_no}}" disabled>
                 </div>
                 <div class="form-group mb-3">
-                    <button class="btn btn-success" type="submit">Submit</button>
+                    <button class="btn btn-success" type="submit">Update</button>
                 </div>
             </form>
         </div>
